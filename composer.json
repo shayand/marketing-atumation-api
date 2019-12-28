@@ -1,7 +1,20 @@
 {
-  "name": "marketing-autumation-api",
-  "version": "1.0.0",
-  "dependencies": {
-    
+  "name": "shayand/marketing-automation-api",
+  "type": "library",
+  "description": "A repository for synchronize any system with Marketing Automation.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Shayan Davarzani",
+      "email": "info@shayand.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": { "shayand\\MarketingAutomationApi\\": "src/" }
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "shayand/api-library": "^0.0.2"
   }
 }
+
