@@ -1,9 +1,9 @@
 <?php
 
-namespace Shayand\MarketingAutomationApi;
+namespace shayand\marketingAutomationApi;
 
 use Shayand\Auth\ApiAuth;
-use Shayand\MarketingAutomationApi\Exception\ApiAuthException;
+use shayand\marketingAutomationApi\Exception\ApiAuthException;
 use Shayand\NextleadApi;
 
 class MarketingAutomationApi

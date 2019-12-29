@@ -1,6 +1,6 @@
 <?php
 
-namespace Shayand\MarketingAutomationApi\Exception;
+namespace shayand\marketingAutomationApi\Exception;
 
 class ApiAuthException extends \Exception
 {

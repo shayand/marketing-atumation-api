@@ -1,10 +1,9 @@
 <?php
 
 
-namespace Shayand\MarketingAutomationApi;
+namespace shayand\marketingAutomationApi;
 
 
-use function GuzzleHttp\Psr7\str;
 
 class Contact
 {
