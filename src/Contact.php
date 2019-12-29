@@ -46,7 +46,7 @@ class Contact
     /**
      * @var array
      */
-    private $tags;
+    private $tags = array();
 
     /**
      * Contact constructor.

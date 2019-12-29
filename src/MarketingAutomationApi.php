@@ -4,6 +4,7 @@ namespace shayand\marketingAutomationApi;
 
 use Shayand\Auth\ApiAuth;
 use Shayand\Auth\AuthInterface;
+use Shayand\Auth\OAuth;
 use shayand\marketingAutomationApi\Exception\ApiAuthException;
 use Shayand\NextleadApi;
 
@@ -62,8 +63,8 @@ class MarketingAutomationApi
      */
     public function createOrUpdateContact(Contact $contact)
     {
-        if($this->oauthObject instanceof AuthInterface){
-            $contactApi = $this->nextLeadApi->newApi('contact',$this->oauthObject,$this->apiUrl);
+        if($this->oauthObject instanceof OAuth){
+            $contactApi = $this->nextLeadApi->newApi('contacts',$this->oauthObject,$this->apiUrl);
             $arr = $contactApi->create($contact->toArray());
             return $arr;
         }else{
@@ -79,8 +80,8 @@ class MarketingAutomationApi
      */
     public function setContactTags(Contact $contact,array $tags)
     {
-        if($this->oauthObject instanceof AuthInterface) {
-            $contactApi = $this->nextLeadApi->newApi('contact', $this->oauthObject, $this->apiUrl);
+        if($this->oauthObject instanceof OAuth) {
+            $contactApi = $this->nextLeadApi->newApi('contacts', $this->oauthObject, $this->apiUrl);
             $list = $contactApi->getList('mobile:' . $contact->getMobile());
             if ($list['total'] > 0) {
                 $singleContact = $list['contacts'];
@@ -106,8 +107,8 @@ class MarketingAutomationApi
     public function setContactExpireDate($category = 'thirdparty',Contact $contact,$duration = "1 year")
     {
 
-        if($this->oauthObject instanceof AuthInterface) {
-            $contactApi = $this->nextLeadApi->newApi('contact', $this->oauthObject, $this->apiUrl);
+        if($this->oauthObject instanceof OAuth) {
+            $contactApi = $this->nextLeadApi->newApi('contacts', $this->oauthObject, $this->apiUrl);
             $list = $contactApi->getList('mobile:' . $contact->getMobile());
             if ($list['total'] > 0) {
                 $singleContact = $list['contacts'];
