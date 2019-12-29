@@ -1,20 +1,18 @@
 {
-  "name": "shayand/marketing-automation-api",
-  "type": "library",
-  "description": "A repository for synchronize any system with Marketing Automation.",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Shayan Davarzani",
-      "email": "info@shayand.com"
+    "name": "shayandavarzani/marketing-automation-api",
+    "type": "library",
+    "description": "A repository for synchronize any system with Marketing Automation.",
+    "license": "MIT",
+    "require": {
+        "shayand/api-library": "^0.0.2"
+    },
+    "authors": [
+        {
+            "name": "Shayan Davarzani",
+            "email": "info@shayand.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "shayand\\marketing-automation-api\\": "src/" }
     }
-  ],
-  "autoload": {
-    "psr-4": { "shayand\\MarketingAutomationApi\\": "src/" }
-  },
-  "minimum-stability": "stable",
-  "require": {
-    "shayand/api-library": "^0.0.2"
-  }
 }
-
