@@ -83,14 +83,16 @@ class MarketingAutomationApi
         if($this->oauthObject instanceof OAuth) {
             $contactApi = $this->nextLeadApi->newApi('contacts', $this->oauthObject, $this->apiUrl);
             $list = $contactApi->getList('mobile:' . $contact->getMobile());
-            if ($list['total'] > 0) {
-                $singleContact = $list['contacts'];
-                foreach ($singleContact as $val){
-                    $contactApi->edit($val['id'],['tags' => $tags]);
+            if(isset($list['total'])){
+                if ($list['total'] > 0) {
+                    $singleContact = $list['contacts'];
+                    foreach ($singleContact as $val){
+                        $contactApi->edit($val['id'],['tags' => $tags]);
+                    }
+                }else{
+                    $cloneContact = $contact->setTags($tags);
+                    $this->createOrUpdateContact($cloneContact);
                 }
-            }else{
-                $cloneContact = $contact->setTags($tags);
-                $this->createOrUpdateContact($cloneContact);
             }
         }else{
             throw new ApiAuthException('invalid api auth object',500);
