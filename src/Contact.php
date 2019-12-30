@@ -77,6 +77,7 @@ class Contact
     {
         $formattedMobile = str_replace('+9809','9',$mobile);
         $formattedMobile = str_replace('+989','9',$formattedMobile);
+        $formattedMobile = str_replace('989','9',$formattedMobile);
         if (substr($formattedMobile,0,1) == "0"){
             $formattedMobile = substr($formattedMobile,1);
         }
