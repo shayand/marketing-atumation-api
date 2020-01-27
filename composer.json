@@ -4,7 +4,7 @@
     "description": "A repository for synchronize any system with Marketing Automation.",
     "license": "MIT",
     "require": {
-        "shayand/api-library": "^0.0.2"
+        "shayand/api-library": "~0.0.2"
     },
     "authors": [
         {
